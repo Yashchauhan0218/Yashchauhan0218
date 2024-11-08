@@ -1,0 +1,275 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('food.jpg') no-repeat center center fixed; /* Background image */
+    background-size: cover;
+    color: #333;
+}
+
+/* Header Styling */
+header {
+    background-color: rgba(58, 58, 58, 0.9);
+    color: white;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    position: relative;
+}
+
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+header img.logo {
+    height: 50px; /* Adjust logo size */
+    width: auto;
+    position: absolute;
+    top: 15px;
+    left: 20px;
+}
+
+
+/* Navigation Styling */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: center;
+    margin-top: 30px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 15px;
+}
+
+nav ul li a {
+    color: #f8f8f8;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #565656; /* Subtle hover effect */
+    color: #ffffff;
+}
+
+/* Main Content */
+main {
+    padding: 40px;
+    background: rgba(217, 240, 233, 0.824); /* Translucent background for readability */
+    border-radius: 8px;
+    max-width: 800px;
+    margin: 30px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+/* Style for the login form */
+section.login {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+section.login h2 {
+    font-size: 2em;
+    color: #3a3a3a;
+    margin-bottom: 20px;
+}
+
+section.login label {
+    display: block;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+section.login input {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+section.login button {
+    width: 100%;
+    padding: 12px;
+    background-color: #3a3a3a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+section.login button:hover {
+    background-color: #565656;
+}
+
+/* Intro Section */
+section.intro {
+    text-align: center;
+    margin-top: 50px;
+}
+ 
+#ingredientList{
+    margin-top: 20px;
+}
+#recipeSuggestions{
+    margin-top: 10px;
+}
+#ingredientForm{
+    margin-top: 10px;
+}
+section.intro h2 {
+    font-size: 2.5em;
+    color: #3a3a3a;
+    margin-bottom: 20px;
+}
+
+section.intro p {
+    font-size: 1.2em;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Inventory Section */
+section.inventory {
+    max-width: 600px;
+    margin: 30px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+section.inventory h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+section.inventory h3 {
+    text-align: center;
+    font-size: 1.5em;
+    color: #555;
+}
+
+/* Footer Styling */
+footer {
+    background-color: rgba(58, 58, 58, 0.9);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: flex;
+    bottom: 0;
+    width: 100%;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9em;
+}
+
+/* Button Styling */
+button {
+    background-color: #3a3a3a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #565656;
+}
+
+/* Form and Input Styling */
+form input[type="text"],
+form input[type="date"] {
+    width: 100%;
+    padding: 20px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form label {
+    font-weight: bold;
+    color: #555;
+}
+
+form button {
+    margin-top: 20px;
+}
+
+/* Table Styling */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: #ffffff;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+}
+
+th {
+    background-color: #3a3a3a;
+    color: white;
+    text-align: center;
+}
+
+td {
+    text-align: center;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    main {
+        padding: 20px;
+    }
+
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    section.intro h2 {
+        font-size: 2em;
+    }
+
+    section.intro p {
+        font-size: 1em;
+    }
+}

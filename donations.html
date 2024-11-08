@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Locator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Find Nearby Food Donation Centers</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="inventory.html">Food Inventory</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="donations.html">Donation Centers</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Locate Donation Centers Near You</h2>
+        <button onclick="locateDonationCenters()">Find Centers</button>
+        <div id="donationCenters"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 FoodSaver. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function locateDonationCenters() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showDonationCenters);
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
+
+        function showDonationCenters(position) {
+            const lat = position.coords.latitude;
+            const long = position.coords.longitude;
+            
+            // Placeholder donation centers (replace with an API for real locations)
+            const centers = [
+                { name: "Local Food Bank", distance: "2 km", address: "123 Main St" },
+                { name: "Community Kitchen", distance: "3 km", address: "456 Oak St" },
+                { name: "Charity Shelter", distance: "5 km", address: "789 Pine St" }
+            ];
+
+            let output = `<p>Your Location: Latitude ${lat.toFixed(2)}, Longitude ${long.toFixed(2)}</p>`;
+            output += `<h3>Nearby Donation Centers:</h3><ul>`;
+
+            centers.forEach(center => {
+                output += `<li><strong>${center.name}</strong><br>Distance: ${center.distance}<br>Address: ${center.address}</li>`;
+            });
+            output += `</ul>`;
+
+            document.getElementById("donationCenters").innerHTML = output;
+        }
+    </script>
+</body>
+</html>

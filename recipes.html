@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Suggestions</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Recipe Suggestions</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="inventory.html">Food Inventory</a></li>
+                <li><a href="recipes.html">Recipes</a></li>
+                <li><a href="donations.html">Donation Centers</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Find Recipes Based on Available Ingredients</h2>
+        
+        <form id="ingredientForm">
+            <label for="ingredient">Enter an Ingredient:</label>
+            <input type="text" id="ingredient" placeholder="e.g., tomato, potato" required>
+            <button type="button" onclick="addIngredient()">Add Ingredient</button>
+        </form>
+        
+        <div id="ingredientList">
+            <h3>Your Ingredients:</h3>
+            <ul id="ingredients"></ul>
+        </div>
+
+        <button onclick="suggestRecipes()">Get Recipe Suggestions</button>
+
+        <div id="recipeSuggestions">
+            <h3>Suggested Recipes:</h3>
+            <ul id="recipes"></ul>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 FoodSaver. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const ingredients = [];
+
+        function addIngredient() {
+            const ingredientInput = document.getElementById("ingredient");
+            const ingredient = ingredientInput.value.trim();
+
+            if (ingredient) {
+                ingredients.push(ingredient);
+                displayIngredients();
+                ingredientInput.value = ""; // Clear input field
+            }
+        }
+
+        function displayIngredients() {
+            const ingredientList = document.getElementById("ingredients");
+            ingredientList.innerHTML = ingredients.map(ing => `<li>${ing}</li>`).join("");
+        }
+
+        function suggestRecipes() {
+            const recipes = [
+                { name: "Vegetable Stir Fry", ingredients: ["tomato", "potato", "carrot"], url: "#" },
+                { name: "Pasta Salad", ingredients: ["tomato", "lettuce", "cucumber"], url: "#" },
+                { name: "Potato Soup", ingredients: ["potato", "onion", "garlic"], url: "#" }
+            ];
+
+            const matchingRecipes = recipes.filter(recipe =>
+                recipe.ingredients.some(ingredient => ingredients.includes(ingredient))
+            );
+
+            const recipeList = document.getElementById("recipes");
+            recipeList.innerHTML = matchingRecipes.length > 0
+                ? matchingRecipes.map(recipe => `<li><a href="${recipe.url}">${recipe.name}</a></li>`).join("")
+                : "<li>No matching recipes found.</li>";
+        }
+    </script>
+</body>
+</html>
